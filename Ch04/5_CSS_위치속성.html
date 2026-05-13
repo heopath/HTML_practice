@@ -21,15 +21,45 @@
         section >  div:nth-of-type(2) { background-color: green; }
         section >  div:nth-of-type(3) { background-color: blue }
 
-        /* position static */
+        /* 
+            position static 
+            모든 태그의 기본 postition값
+            태그를 화면에 고정시켜 방향 이동 안됨
+        */
+        .box1 > div:nth-of-type(1) { left: 10px; top:10px}        
+        .box1 > div:nth-of-type(2) { right: 10px; top:10px}        
+        .box1 > div:nth-of-type(3) { position: static; left: 10px; bottom:10px}        
 
-        /* position relative */
+        /* 
+            position relative 
+            현재 위치에서 방향 속성으로 위치 이동
+            자식 태그가 absolute 위치 속성이면 부모 태그의 position 값으로 relative 적용
+        */
+        .box2 > div:nth-of-type(1) { position: relative; left: 10px; top: 10px }
+        .box2 > div:nth-of-type(2) { position: relative; right: -30px; top: 20px }
+        .box2 > div:nth-of-type(3) { position: relative; left: 10px; botton: -40px }
+
+        /*
+            position absolute 
+            태그를 부모 공간안에서 좌표 이동하는 위치 속성
+            부모 공간 태그는 position: reative로 위치 속성으로 설정    
+        */
+        .box3 { position: relative; }
+        .box3 > div:nth-last-of-type(1) { position: absolute; left: 0px; bottom: 0px; }
+        .box3 > div:nth-last-of-type(2) { position: absolute; right: 0px; top: 0px; }
+        .box3 > div:nth-last-of-type(3) { position: absolute; right: 0px; bottom: 0px; }
         
-        /* position absolute */
-        
-        /* position fixed */
+        /* 
+            position fixed 
+            브라우저 화면에 고정, 브라우저 스크롤해도 위치 고정됨
+            */
+        html {
+            height: 2000px;
+        }
 
-
+        .box4 > div:nth-of-type(1) { position: fixed; right: 10px; top: 10px; }
+        .box4 > div:nth-of-type(2) { position: fixed; right: 20px; top: 20px; }
+        .box4 > div:nth-of-type(3) { position: fixed; right: 30px; top: 30px; }
 
     </style>
 </head>
@@ -44,21 +74,21 @@
         <div></div>
     </section>
     
-    <section class="box1">
+    <section class="box2">
         <span>relative</span>
         <div></div>
         <div></div>
         <div></div>
     </section>
     
-    <section class="box1">
+    <section class="box3">
         <span>absolute</span>
         <div></div>
         <div></div>
         <div></div>
     </section>
 
-    <section class="box1">
+    <section class="box4">
         <span>fixed</span>
         <div></div>
         <div></div>
