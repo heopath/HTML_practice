@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>farmstory::main</title>
+    <style>
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            font: normal 12px '돋움';
+        }
+        ul, ol {list-style: none;}
+        a {text-decoration: none; color: #111;}
+        input, textarea {outline: none;}
+
+        #container {
+            width: 980px;
+            height: auto;
+            border: 1px solid red;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        /* 헤더 */
+        header {
+            position: relative;
+            width: 100%;
+            height: 142px;
+            background: url("../images/head_top_line.png") no-repeat;
+        }
+
+        header > .logo {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            margin-left: -95px;
+        }
+        header > p {
+            float: right;
+            margin-top: 26px;
+        }
+        header > p > a {
+
+        }
+        header > .text {
+            float: right;
+            clear: both;
+        }
+        header > .gnb {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+        header > .gnb > li {
+            float: left;
+            width: 20%;
+            height: 100%;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+        header > .gnb > li > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+        }
+
+        header > .gnb > li:nth-child(1) > a {
+            background: url("../images/head_menu1.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(2) > a {
+            background: url("../images/head_menu2.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(3) > a {
+            background: url("../images/head_menu3.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(4) > a {
+            background: url("../images/head_menu4.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(5) > a {
+            background: url("../images/head_menu5.png") no-repeat;
+        }
+
+        header > .gnb > li:nth-child(1) > a:hover {
+            background: url("../images/head_menu1_ov.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(2) > a:hover {
+            background: url("../images/head_menu2_ov.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(3) > a:hover {
+            background: url("../images/head_menu3_ov.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(4) > a:hover {
+            background: url("../images/head_menu4_ov.png") no-repeat;
+        }
+        header > .gnb > li:nth-child(5) > a:hover {
+            background: url("../images/head_menu5_ov.png") no-repeat;
+        }
+
+        /* 메인 */
+        main {
+            width: 100%;
+            min-height: 500px;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+        
+        main > div {
+            width: 100%;
+            border: 1px solid green;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        main > div:nth-child(1) {height: 312px;}
+        main > div:nth-child(2) {height: 286px;}
+        main > div:nth-child(3) {height:  74px;}
+        main > div:nth-child(4) {height: 186px;}
+        main > div:nth-child(5) {height: 154px;}
+
+        /* 슬라이더  */
+        /* 장보기 배너 */
+        /* 바로가기  */
+        /* 최신글 목록  */
+        .latest {
+            display: flex;
+        }
+        .latest > article {
+            width: 100%;
+            border: 1px solid orange;
+            box-sizing: border-box;
+        }
+
+        /* 기타 정보 안내  */
+        .info {
+            display: flex;
+        }
+
+        .info > article {
+            width: 100%;
+            border: 1px solid orange;
+            box-sizing: border-box;
+        }
+        
+        .info > article:nth-child(2) {
+            width: 70%;
+        }
+
+        /* 푸터 */
+        footer {
+            width: 100%;
+            height: 120px;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <!-- 로고 -->
+             <a href="#" class="logo"><img src="../images/logo.png" alt="메인로고"></a>
+             
+             <!-- 오른쪽 상단 메뉴 -->
+              <p>
+                <a href="#">HOME|</a>
+                <a href="#">로그인|</a>
+                <a href="#">회원가입|</a>
+                <a href="#">관리자|</a>
+                <a href="#">고객센터</a>
+              </p>
+
+              <!-- 오른쪽 텍스트 배너 -->
+               <img class="text" src="../images/head_txt_img.png" alt="3만원이상 무료배송">
+
+              <!-- 메인 메뉴(GNB) -->
+               <ul class="gnb">
+                <li><a href="#">팜스토리소개</a></li>
+                <li><a href="#">장보기</a></li>
+                <li><a href="#">농작물이야기</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">커뮤니티</a></li>
+               </ul>
+
+        </header>
+        <main>
+            <div class="slider"></div>
+            <div class="market"></div>
+            <div class="quick"></div>
+            <div class="latest">
+                <article></article>
+                <article></article>
+                <article></article>
+            </div>
+            <div class="info">
+                <article></article>
+                <article></article>
+                <article></article>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+    
+</body>
+</html>
